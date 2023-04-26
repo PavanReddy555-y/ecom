@@ -14,10 +14,10 @@ public interface CartRepository extends JpaRepository<Cart, Integer> {
 //			+ "(select product_id from ecommerce_fashio.cart where user_id = :userId)" , nativeQuery = true)
 //	List<Product> findProductByUserId(int userId);
 	
-	@Query(value="select product_id from ecommerce.cart where user_id =:userId",nativeQuery =true)
+	@Query(value="select product_id from ecommerce_fashio.cart where user_id =:userId",nativeQuery =true)
 	List<Integer> findProductIdsByUserId(int userId);
 	
-	@Query(value = "select * from ecommerce.cart where product_id =:productId",nativeQuery = true)
+	@Query(value = "select * from ecommerce_fashio.cart where product_id =:productId",nativeQuery = true)
 	Cart findCartByProductId(int productId);
 
 }

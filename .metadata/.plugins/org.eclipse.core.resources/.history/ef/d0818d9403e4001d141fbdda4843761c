@@ -33,17 +33,9 @@ public class CartServiceImpl implements CartService {
 	}
 
 	public void saveCart(Cart cart) {
-		List<Integer>  productIdList  =  cartRepository.findProductIdsByUserId(cart.getUserId());
-		boolean flag = false;
-		for(int productId : productIdList) {
-			if(productId == cart.getProductId()) {
-				flag = true;
-				break;
-			}
-		}
-		if(!flag) {
-			cartRepository.save(cart);
-		}
+		
+		cartRepository.save(cart);
+		
 	}
 
 	
